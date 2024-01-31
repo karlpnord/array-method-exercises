@@ -19,19 +19,25 @@ to generate a button:
 https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
 */
+const container = document.querySelector(".container");
 
 const buttons = [
-  {
-    text: 'Button Text 1',
-  },
-  {
-    text: 'Button Text 2',
-  },
-  {
-    text: 'Button Text 3',
-  },
+   {
+      text: "Button Text 1",
+   },
+   {
+      text: "Button Text 2",
+   },
+   {
+      text: "Button Text 3",
+   },
 ];
 
-const buttonElements = null; // Replace null and add .map code here
+const buttonElements = buttons.map((button) => {
+   const newButton = document.createElement("button");
+   newButton.innerText = button.text;
+   container.append(newButton);
+   return newButton;
+});
 
 console.log(buttonElements);

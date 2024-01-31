@@ -12,32 +12,32 @@ set your .filter results to this variable.
 */
 
 const users = [
-  {
-    firstName: 'Ola',
-    lastName: 'Nordmann',
-    isAdmin: true,
-    isVerified: false,
-  },
-  {
-    firstName: 'Kari',
-    lastName: 'Nordmann',
-    isAdmin: true,
-    isVerified: true,
-  },
-  {
-    firstName: 'Jan',
-    lastName: 'Nordmann',
-    isAdmin: true,
-    isVerified: true,
-  },
-  {
-    firstName: 'Nora',
-    lastName: 'Nordmann',
-    isAdmin: false,
-    isVerified: false,
-  },
+   {
+      firstName: "Ola",
+      lastName: "Nordmann",
+      isAdmin: true,
+      isVerified: false,
+   },
+   {
+      firstName: "Kari",
+      lastName: "Nordmann",
+      isAdmin: true,
+      isVerified: true,
+   },
+   {
+      firstName: "Jan",
+      lastName: "Nordmann",
+      isAdmin: true,
+      isVerified: true,
+   },
+   {
+      firstName: "Nora",
+      lastName: "Nordmann",
+      isAdmin: false,
+      isVerified: false,
+   },
 ];
 
-const filteredUsers = null; // Replace null and add .filter code here
+const filteredUsers = users.filter((user) => user.isAdmin && user.isVerified);
 
 console.log(filteredUsers);

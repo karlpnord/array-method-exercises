@@ -12,23 +12,25 @@ set your .filter result to this variable.
 */
 
 const students = [
-  {
-    studentName: 'Ola',
-    mark: 50,
-    isOnline: false,
-  },
-  {
-    studentName: 'Kari',
-    mark: 80,
-    isOnline: true,
-  },
-  {
-    studentName: 'Nora',
-    mark: 60,
-    isOnline: false,
-  },
+   {
+      studentName: "Ola",
+      mark: 50,
+      isOnline: false,
+   },
+   {
+      studentName: "Kari",
+      mark: 80,
+      isOnline: true,
+   },
+   {
+      studentName: "Nora",
+      mark: 60,
+      isOnline: false,
+   },
 ];
 
-const filteredStudents = null; // Replace null and add .filter code here
+const filteredStudents = students.filter(
+   (student) => student.isOnline && student.mark >= 75
+);
 
 console.log(filteredStudents);

@@ -17,28 +17,33 @@ Tip: Use 'toLowerCase()' when setting the team's key
 */
 
 const teams = [
-  {
-    name: 'Hawks',
-    score: 60,
-    isWinner: true,
-  },
-  {
-    name: 'Dolphins',
-    score: 50,
-    isWinner: true,
-  },
-  {
-    name: 'Falcons',
-    score: 90,
-    isWinner: false,
-  },
-  {
-    name: 'Bears',
-    score: 90,
-    isWinner: false,
-  },
+   {
+      name: "Hawks",
+      score: 60,
+      isWinner: true,
+   },
+   {
+      name: "Dolphins",
+      score: 50,
+      isWinner: true,
+   },
+   {
+      name: "Falcons",
+      score: 90,
+      isWinner: false,
+   },
+   {
+      name: "Bears",
+      score: 90,
+      isWinner: false,
+   },
 ];
 
-const winningTeams = null; // Replace null and add .reduce code here
+const winningTeams = teams.reduce((winningTeams, { name, score, isWinner }) => {
+   if (isWinner) {
+      winningTeams[name.toLocaleLowerCase()] = score;
+   }
+   return winningTeams;
+}, {});
 
 console.log(winningTeams);

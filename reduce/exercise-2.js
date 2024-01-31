@@ -19,23 +19,35 @@ the items in stock ('itemsInStock') by the price ('price')
 */
 
 const items = [
-  {
-    name: 'Apple',
-    itemsInStock: 10,
-    price: 5.99,
-  },
-  {
-    name: 'Banana',
-    itemsInStock: 5,
-    price: 3.99,
-  },
-  {
-    name: 'Orange',
-    itemsInStock: 2,
-    price: 3.99,
-  },
+   {
+      name: "Apple",
+      itemsInStock: 10,
+      price: 5.99,
+   },
+   {
+      name: "Banana",
+      itemsInStock: 5,
+      price: 3.99,
+   },
+   {
+      name: "Orange",
+      itemsInStock: 2,
+      price: 3.99,
+   },
 ];
 
-const totalCostOfItems = null; // Replace null and add .reduce code here
+const totalCostOfItems = items.reduce((total, item) => {
+   total += item.price * item.itemsInStock;
+   return total;
+}, 0);
+
+const totalCostOfItemsDestructured = items.reduce(
+   (total, { itemsInStock, price }) => {
+      total += itemsInStock * price;
+      return total;
+   },
+   0
+);
 
 console.log(totalCostOfItems);
+console.log(totalCostOfItemsDestructured);
